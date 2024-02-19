@@ -1,0 +1,140 @@
+﻿@model MVCBlog.Website.Models.OutputModels.Society.UserListViewModels
+@using res = MVCBlog.Core.Resources;
+
+<h2>@Common.List&nbsp;@Common.AspNetUser</h2>
+<p>
+    <span class="text-danger">@ViewBag.Message</span>
+</p>
+@using (Ajax.BeginForm(MVC.AspNetUsers.Find(), new AjaxOptions
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "list",
+    OnBegin = "onBegin",
+    OnComplete = "onComplete"
+}, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+<div class="row">
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.LastName)
+        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.FirstName)
+        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.NickName)
+        @Html.EditorFor(model => model.NickName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.NickName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.UserName)
+        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyInteger(event);" } })
+        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.UserNumber)
+        @Html.EditorFor(model => model.UserNumber, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyInteger(event);" } })
+        @Html.ValidationMessageFor(model => model.UserNumber, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.State)
+        @Html.EnumDropDownListFor(_ => _.State, "...", htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="form-group" style="margin:4px;">
+        @Html.LabelFor(model => model.Rols)
+        @Html.EnumDropDownListFor(_ => _.Rols, "...", htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <button input id="@Common.Find" style="margin-right:10px" type="submit" value="@Common.Find" class="btn btn-success" data-loading-text="@Common.Finding" data-toggle="tooltip" data-placement="right" title="Buscar Usuarios">
+        <span class="glyphicon glyphicon-search"></span> Buscar
+    </button>
+
+    <button id="@Common.Export" type="button" value="@Common.Export" class="btn btn-info" data-loading-text="@Common.Exporting" onclick="exportGrid();" data-toggle="tooltip" data-placement="right" title="Descargar Socios .xlsx">
+        <span class="glyphicon glyphicon glyphicon-download"></span> Exportar
+    </button>
+</div>
+}
+<br />
+
+<div id="list"></div>
+@if (Request.IsAuthenticated && User.IsInRole("ADMIN"))
+{
+    <button id="btnUpdate" class="btn btn-primary btn-sm" data-loading-text="@Common.Updating" onclick="updateCategories();"  data-toggle="tooltip" data-placement="right" title="Actualizar Categorias de Todos los Usuarios segun la Edad">
+        <span class="glyphicon glyphicon glyphicon-retweet"></span> @Common.Update @Common.Category
+    </button>
+}
+
+@section ScriptContent {
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script>
+
+        function onBegin() {
+            $("#@Common.Find").button("loading");
+        }
+
+        function onComplete() {
+            $("#@Common.Find").button("reset");
+        }
+
+        function updateCategories() {
+            if (confirm("@res.Validation.AreYouSureYouWant @Common.Update @Common.Category?")) {
+                $("#btnUpdate").button("loading");
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=UTF-8",
+                    url: "@Url.Action(MVC.AspNetUsers.UpdateCategories())",
+                    dataType: "json",
+                    data: {},
+                    success: function (result) {
+                        if (result.success) {
+                            $("#btnUpdate").button("reset");
+                            alert(result.msg);
+                        }
+                    },
+                    error: function (ex) {
+                        alert("Error" + ex);
+                    }
+                });
+            }
+        }
+
+        function exportGrid() {
+            $("#@Common.Export").button("loading");
+            var viewModel = {
+                UserName: $("#UserName").val(),
+                UserNumber: $("#UserNumber").val(),
+                FirstName: $("#FirstName").val(),
+                LastName: $("#LastName").val(),
+                NickName: $("#NickName").val(),
+                State: $("#State").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=UTF-8",
+                url: "/AspNetUsers/Export/",
+                dataType: "json",
+                data: JSON.stringify(viewModel),
+                success: function (response) {
+                    if (response.success) {
+                        $("#@Common.Export").button("reset");
+                        window.location.replace("/AspNetUsers/Download/" + "?file=" + response.result);
+                    }
+                },
+                error: function (ex) {
+                    alert("Error" + ex);
+                }
+            });
+        }
+
+    </script>
+}
+
+
+
+

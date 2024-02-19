@@ -1,0 +1,337 @@
+﻿@using res = MVCBlog.Core.Resources;
+
+@model  MVCBlog.Core.Entities.AspNetUser
+
+@using (Html.BeginForm("Edit", "AspNetUsers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>@Common.Edit&nbsp;@Common.AspNetUser</h2>
+        <hr />
+        @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.EmailConfirmed)
+        @Html.HiddenFor(model => model.PasswordHash)
+        @Html.HiddenFor(model => model.SecurityStamp)
+        @Html.HiddenFor(model => model.PhoneNumberConfirmed)
+        @Html.HiddenFor(model => model.TwoFactorEnabled)
+        @Html.HiddenFor(model => model.LockoutEndDateUtc)
+        @Html.HiddenFor(model => model.LockoutEnabled)
+        @Html.HiddenFor(model => model.AccessFailedCount)
+        @Html.HiddenFor(model => model.Modified)
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NickName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NickName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NickName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProvinceId, res.Labels.Province, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ProvinceId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ProvinceId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LocalityId, res.Labels.Locality, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("LocalityId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LocalityId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("State", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(_ => _.State, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @if (Model.UserNumber == null)
+                    {
+                        @Html.EditorFor(model => model.UserNumber, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyInteger(event);" } })
+                    }
+                    else
+                    {
+                        @Html.EditorFor(model => model.UserNumber, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                    }
+
+                    @Html.ValidationMessageFor(model => model.UserNumber, "", new { @class = "text-danger" })
+                </div>
+                @if (Model.UserNumber == null)
+                {
+                    <button id="btnGetLastNumberPartner" class="btn btn-default" data-loading-text="@Common.Updating" onclick="return GetLastNumberPartner();">
+                        <span class="glyphicon glyphicon glyphicon-retweet"></span> @Common.Last
+                    </button>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Birthdate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    <div class="input-group date" id="datetimepicker1">
+                        @{ Html.EnableClientValidation(false); }
+                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyDate(event);" } })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <!-- SI no tiene categoria no le asigna -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.CategoryId, res.Labels.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">@Common.File jpg/jpeg:</label>
+                <div class="col-md-10">
+                    <input type="file" name="image" id="image" class="form-control" />
+                    <img src="@Url.Content(Model.RelativePath + Model.Photo)" alt="sin foto" title="@Html.DisplayFor(model => model.Photo)" height="180" width="180" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <button type="submit" value="Crear" class="btn btn-success" onclick="return Validate();">
+                    <span class="glyphicon glyphicon-ok"></span> Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(@Common.BackToList, MVC.AspNetUsers.Index(Model.Id))
+    @if (Request.IsAuthenticated && User.IsInRole("ADMIN"))
+    {
+        @Html.Encode(" | ")
+        @Html.ActionLink("Editar Roles", "AddRoleToUser", "Account", new { id = Model.Id }, new { data_modal = "" })
+    }
+    @if (Model.UserNumber != null && Model.State != MVCBlog.Core.Entities.AspNetUserState.Disabled)
+    {
+        @Html.Encode(" | ")
+        @Html.ActionLink(@Common.Pay, MVC.SocietyMonthlyFee.Create(Model.Id))
+    }
+</div>
+<!-- modal placeholder-->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
+@section ScriptContent {
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/es.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyDateTime.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script>
+        $(document).ready(function () {
+            //Change Province
+            $("#ProvinceId").change(function () {
+                $("#LocalityId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLocalities")',
+                    dataType: 'json',
+                    data: { id: $("#ProvinceId").val() },
+                    success: function (localities) {
+                        //console.log(field);
+                        $.each(localities, function (i, field) {
+                            $("#LocalityId").append('<option value="' + field.Value + '">' + field.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert("@res.Validation.FailedToRetrieve" + "@res.Labels.Locality" + ex);
+                    }
+                });
+                return false;
+            })
+            //Change Birthdate
+            $("#Birthdate").change(function () {
+                $("#CategoryId").empty();
+                var birthdate = $("#Birthdate").val();
+                if (!IsDate(birthdate)) {
+                    $("#Birthdate").val('');
+                    $("#CategoryId").append('<option value=""></option>');
+                    return false;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetCategories")',
+                    dataType: 'json',
+                    data: { id: birthdate },
+                    success: function (categories) {
+                        $.each(categories, function (i, field) {
+                            $("#CategoryId").append('<option value="' + field.Value + '">' + field.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert("@res.Validation.FailedToRetrieve" + "@res.Labels.Category" + ex);
+                    }
+                });
+                return false;
+            })
+            //Calendar
+            $('#datetimepicker1').datetimepicker({
+                locale: 'es',
+                format: 'DD/MM/YYYY'
+            });
+            //Modal
+            $.ajaxSetup({ cache: false });
+            $("a[data-modal]").on("click", function (e) {
+                $('#myModalContent').load(this.href, function () {
+                    $('#myModal').modal({
+                        keyboard: true
+                    }, 'show');
+                    $("#myModal").appendTo("body");
+                    bindForm(this);
+                });
+                return false;
+            });
+        });
+
+        function bindForm(dialog) {
+            $('form', dialog).submit(function () {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        if (result.success) {
+                            $('#myModal').modal('hide');
+                            $('#replacetarget').load(result.url); //  Load data from the server and place the returned HTML into the matched element
+                        } else {
+                            $('#myModalContent').html(result);
+                            bindForm(dialog);
+                        }
+                    }
+                });
+                return false;
+            });
+        }
+
+        function Validate() {
+            //check whether browser fully supports all File API
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                if ($('#image')[0].files[0] != null) {
+                    //get the file size and file type from file input field
+                    var fsize = $('#image')[0].files[0].size;
+                    var ftype = $('#image')[0].files[0].type;
+                    var fname = $('#image')[0].files[0].name;
+
+                    if (fsize > 97200) //do something if file size more than 1 mb (1048576) 97200
+                    {
+                        alert(fsize + " bites\n" + "@res.Validation.ToBigFile");
+                        $('#image')[0].value = null;
+                        return false;
+                    } else {
+                        if (ftype != 'image/jpeg') {
+                            alert(ftype + "@res.Validation.UnsupportedFile");
+                            $('#image')[0].value = null;
+                            return false;
+                        }
+                    }
+                }
+            } else {
+                alert("@res.Validation.UpgradeYourBrowser");
+                $('#image')[0].value = null;
+                return false;
+            }
+        }
+
+        function GetLastNumberPartner() {
+            $("#btnGetLastNumberPartner").button("loading");
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=UTF-8",
+                url: "@Url.Action(MVC.AspNetUsers.GetLastNumberPartner())",
+                dataType: "json",
+                data: {},
+                success: function (result) {
+                    if (result.success) {
+                        $('#UserNumber').val(result.number);
+                        $("#btnGetLastNumberPartner").button("reset");
+                    }
+                },
+                error: function (ex) {
+                    alert("Error" + ex);
+                }
+            });
+            return false;
+        }
+    </script>
+}
+

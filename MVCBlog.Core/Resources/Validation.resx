@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Microsoft ResX Schema Version 2.0 -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Comment" xml:space="preserve">
+    <value>Introduzca un comentario.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Por favor, introduzca el correo electrónico correctamente o deje el campo vacío.</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Por favor, introduzca el sitio web correctamente o deje el campo vacío.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Por favor, escriba su nombre.</value>
+  </data>
+  <data name="CategoyYearFromYearTo" xml:space="preserve">
+    <value>CategoyYearFromYearTo</value>
+  </data>
+  <data name="CategoryRangeExists" xml:space="preserve">
+    <value>CategoryRangeExists</value>
+  </data>
+  <data name="UserNameDNI" xml:space="preserve">
+    <value>User Name is DNI</value>
+  </data>
+  <data name="PasswordConfirmationDoNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="LeastCharacters" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="NoMoreCharacters" xml:space="preserve">
+    <value>No More Characters.</value>
+  </data>
+  <data name="IncorrectTextImagen" xml:space="preserve">
+    <value>IncorrectTextImagen.</value>
+  </data>
+  <data name="OnlyInteger" xml:space="preserve">
+    <value>Only Integer.</value>
+  </data>
+  <data name="UpgradeYourBrowser" xml:space="preserve">
+    <value>Please upgrade your browser, because your current browser lacks some new features we need!</value>
+  </data>
+  <data name="FailedToRetrieve" xml:space="preserve">
+    <value>Failed to retrieve </value>
+  </data>
+  <data name="UnsupportedFile" xml:space="preserve">
+    <value> is unsupported File!</value>
+  </data>
+  <data name="ToBigFile" xml:space="preserve">
+    <value>To Big!</value>
+  </data>
+  <data name="MaxRows" xml:space="preserve">
+    <value>Your search filter brought {0} or more records</value>
+  </data>
+  <data name="RepeatedPartner" xml:space="preserve">
+    <value>Repeated partner</value>
+  </data>
+  <data name="DateFromDateTo" xml:space="preserve">
+    <value>Date From higher Date To</value>
+  </data>
+  <data name="DiferentDate" xml:space="preserve">
+    <value>Date From higher Date To highet to {0} days</value>
+  </data>
+  <data name="NumberBetween" xml:space="preserve">
+    <value>The field {0} must be between {1} and {2}</value>
+  </data>
+  <data name="PayActiveOrSuspended" xml:space="preserve">
+    <value>El estado del socio debe ser Activo o Suspendido para poder pagar cuotas.</value>
+  </data>
+  <data name="OnlyDate" xml:space="preserve">
+    <value>The field {0} must be a date. </value>
+  </data>
+  <data name="ThereAreNoCategories" xml:space="preserve">
+    <value>There are no categories entered.</value>
+  </data>
+  <data name="TheyWereUpdated" xml:space="preserve">
+    <value>They were updated {0} of {1}.</value>
+  </data>
+  <data name="AreYouSureYouWant" xml:space="preserve">
+    <value>Are you sure you want to</value>
+  </data>
+  <data name="IsClosed" xml:space="preserve">
+    <value>Is Closed</value>
+  </data>
+  <data name="AmountWithCero" xml:space="preserve">
+    <value>Amount With Cero</value>
+  </data>
+  <data name="ErrorFK" xml:space="preserve">
+    <value>Error FK</value>
+  </data>
+  <data name="BirthdateCategoryNotNull" xml:space="preserve">
+    <value>The Birthdate and Category can't be null.</value>
+  </data>
+  <data name="PaymentDateLower" xml:space="preserve">
+    <value>Payment Date can't be Lower {0:dd/MM/yyyy}.</value>
+  </data>
+  <data name="PaymentDayUpperToToday" xml:space="preserve">
+    <value>Payment day upper to today {0:dd/MM/yyyy}.</value>
+  </data>
+</root>

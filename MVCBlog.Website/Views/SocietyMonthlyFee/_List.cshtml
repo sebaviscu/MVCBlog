@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MVCBlog.Core.Entities.SocietyMonthlyFee>
+
+<p>
+    @if (Model.GroupBy(u => u.AspNetUserId).Count() == 1)
+    {
+        @Html.ActionLink(@Common.Create, MVC.SocietyMonthlyFee.Create(Model.FirstOrDefault().AspNetUserId));
+    }
+</p>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetUser.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspNetUser.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Period)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>*@
+            <td>
+                @if (!item.IsClosed)
+                {
+                    @Html.ActionLink(@Common.Edit, MVC.SocietyMonthlyFee.Edit(item.Id))
+                }
+                else
+                { <span>- - - - -</span> } |
+                @Html.ActionLink(@Common.Details, MVC.SocietyMonthlyFee.Details(item.Id)) |
+                @if (!item.IsClosed)
+                {
+                    @Html.ActionLink(@Common.Delete, MVC.SocietyMonthlyFee.Delete(item.Id))
+                }
+                else
+                { <span>- - - - -</span> }
+            </td>
+        </tr>
+    }
+
+</table>

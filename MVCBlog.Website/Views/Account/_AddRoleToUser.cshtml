@@ -1,0 +1,23 @@
+﻿@model MVCBlog.Website.Models.RolesViewModel
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">@Common.Edit Roles</h4>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="modal-body">
+        @Html.HiddenFor(model => model.Id)
+        @foreach (var item in Model.AvailableRoles)
+        {
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="SelectedRoles" value="@item.Value" @if (item.Selected) { <text> checked</text> } /> @item.Text
+                </label>
+            </div>
+        }
+    </div>
+    <div class="modal-footer">
+        <button class="btn" type="button" data-dismiss="modal">@Common.Cancel</button>
+        <input class="btn btn-primary" type="submit" value="@Common.Save" />
+    </div>
+}

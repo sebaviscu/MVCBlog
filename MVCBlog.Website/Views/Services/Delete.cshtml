@@ -1,0 +1,89 @@
+﻿@model MVCBlog.Core.Entities.Service
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Estás seguro que quieres eliminar esto?</h3>
+<div>
+    <h4>Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Coach.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coach.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            $ @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchedulerDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchedulerDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchedulerTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchedulerTime)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modified)
+        </dd>*@
+
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value=@Common.Delete class="btn btn-default" /> |
+        @Html.ActionLink(@Common.BackToList, MVC.Category.Index())
+    </div>
+}

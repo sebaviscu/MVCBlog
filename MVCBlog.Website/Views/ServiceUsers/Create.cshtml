@@ -1,0 +1,90 @@
+﻿@model MVCBlog.Core.Entities.ServiceUser
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Nuevo Usuario en Servicio</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.ServiceId, "ServiceId", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Profesor por Servicio</label>
+            <div class="col-md-10">
+                @Html.DropDownList("ServiceId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ServiceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.AspNetUserId, "AspNetUserId", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Socio</label>
+            <div class="col-md-10">
+                @Html.DropDownList("AspNetUserId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AspNetUserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                <div class="input-group date" id="datetimepicker1">
+                    @{ Html.EnableClientValidation(false); }
+                    @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyDate(event);" } })
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" value="Crear" class="btn btn-success">
+                    <span class="glyphicon glyphicon-ok"></span> Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver a la Lista", "Index")
+</div>
+
+
+
+@section ScriptContent {
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/es.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyDateTime.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script type="text/javascript">
+
+        $('#datetimepicker1').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+
+
+    </script>
+
+}

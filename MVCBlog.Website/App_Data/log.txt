@@ -1,0 +1,254 @@
+2018-01-20 11:52:38,235 [17] ERROR MVCBlog.Core.Database.DatabaseContext [(null)] - Saving to database failed
+System.ObjectDisposedException: The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.
+   en System.Data.Entity.Core.Objects.ObjectContext.ReleaseConnection()
+   en System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en MVCBlog.Core.Database.DatabaseContext.<SaveChangesAsync>d__50.MoveNext() en C:\Projects\MVCBlogSociety\src\MVCBlog.Core\Database\DatabaseContext.cs:línea 66
+2018-06-03 20:42:26,029 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2018-06-03 20:42:32,957 [7] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2018-06-03 20:42:38,505 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2018-06-03 20:42:43,117 [7] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2018-06-03 20:42:46,566 [8] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2018-06-03 20:43:10,723 [7] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2019-09-25 09:41:42,267 [18] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2019-10-08 20:03:01,040 [8] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-10-28 18:10:59,608 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-10-28 18:11:12,936 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-10-28 18:11:49,077 [25] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-10-31 22:00:45,590 [12] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-10-31 22:01:58,099 [22] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-10-31 22:02:22,289 [21] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-10-31 22:03:07,869 [22] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-11-02 10:56:37,462 [60] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 10:56:53,536 [60] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 10:58:35,565 [47] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 10:59:46,523 [47] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:00:16,206 [82] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:00:59,288 [82] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:01:21,000 [79] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:02:38,522 [67] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:03:35,347 [50] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:26:51,287 [84] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:27:17,534 [21] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:27:39,049 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:28:27,504 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-02 11:52:00,212 [36] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-27 19:39:37,056 [8] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2019-11-28 18:12:27,283 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-11-28 18:12:50,443 [18] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:19:36,633 [41] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-11-28 18:19:52,892 [10] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:26:49,168 [15] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:28:12,346 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:28:48,591 [23] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:29:30,356 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:31:06,527 [28] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:31:47,961 [15] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:33:05,361 [33] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:33:24,556 [35] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:34:19,710 [27] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:34:57,130 [6] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:35:26,723 [18] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:37:28,953 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:54:52,096 [22] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:56:31,120 [22] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2019-11-28 18:57:58,542 [30] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-28 18:58:08,456 [6] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2019-11-28 18:59:20,055 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddOrUpdateBlogEntryFileCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddOrUpdateBlogEntryFileCommand
+2019-11-28 18:59:43,044 [17] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryFileCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryFileCommand
+2019-11-29 10:56:08,888 [15] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-29 11:00:47,600 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-29 11:01:54,537 [5] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2019-11-29 11:03:26,788 [6] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2019-11-29 11:06:16,000 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2019-11-29 11:07:58,039 [8] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommentCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommentCommand
+2019-11-29 11:07:58,378 [30] ERROR MVCBlog.Website.EmailMessageService [(null)] - Sending email failed
+System.Net.Mail.SmtpException: Error al enviar correo. ---> System.Net.WebException: No se puede resolver el nombre remoto: 'mail.mvcsocial.site'
+   en System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   en System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   en System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   en System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   en System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpClient.GetConnection()
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   en MVCBlog.Website.EmailMessageService.SendMessage(String sender, String recipient, String replyto, String subject, String body) en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Website\Code\EmailMessageService.cs:línea 63
+2020-01-06 22:43:11,543 [29] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-06 22:43:29,249 [5] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-09 19:56:49,165 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-01-13 21:33:57,666 [81] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommentCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommentCommand
+2020-01-13 21:34:09,237 [78] ERROR MVCBlog.Website.EmailMessageService [(null)] - Sending email failed
+System.Net.Mail.SmtpException: Error al enviar correo. ---> System.Net.WebException: No se puede resolver el nombre remoto: 'mail.mvcsocial.site'
+   en System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   en System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   en System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   en System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   en System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpClient.GetConnection()
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   en MVCBlog.Website.EmailMessageService.SendMessage(String sender, String recipient, String replyto, String subject, String body) en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Website\Code\EmailMessageService.cs:línea 63
+2020-01-15 19:17:44,419 [51] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:26:00,761 [26] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:26:32,696 [26] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:29:19,518 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-01-22 19:29:53,692 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:30:20,771 [34] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:31:03,856 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddOrUpdateBlogEntryFileCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddOrUpdateBlogEntryFileCommand
+2020-01-22 19:31:08,879 [27] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-01-22 19:31:47,431 [33] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntryFile, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 19:39:15,171 [30] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-01-22 20:23:23,750 [17] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:23:28,203 [18] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:23:32,112 [17] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:23:40,249 [17] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:25:23,107 [27] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:25:29,724 [26] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-01-22 20:25:32,722 [32] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-06 17:08:12,709 [70] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-06 17:17:44,594 [53] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-06 17:19:02,440 [56] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-06 17:19:03,474 [56] ERROR MVCBlog.Core.Database.DatabaseContext [(null)] - Saving to database failed
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: La conversión del tipo de datos datetime2 en datetime produjo un valor fuera de intervalo.
+Se terminó la instrucción.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   en System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, String endMethod, Boolean isInternal)
+   en System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   en System.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   en System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   en System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.<ExecuteAsync>d__0.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.<UpdateAsync>d__0.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStoreAsync>d__39.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesInternalAsync>d__31.MoveNext()
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   en MVCBlog.Core.Database.DatabaseContext.<SaveChangesAsync>d__66.MoveNext() en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Core\Database\DatabaseContext.cs:línea 72
+2020-02-06 17:21:17,062 [56] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-06 17:22:04,811 [61] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommentCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommentCommand
+2020-02-06 17:22:05,092 [64] ERROR MVCBlog.Website.EmailMessageService [(null)] - Sending email failed
+System.Net.Mail.SmtpException: Error al enviar correo. ---> System.Net.WebException: No se puede resolver el nombre remoto: 'mail.mvcsocial.site'
+   en System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   en System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   en System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   en System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   en System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpClient.GetConnection()
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   en MVCBlog.Website.EmailMessageService.SendMessage(String sender, String recipient, String replyto, String subject, String body) en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Website\Code\EmailMessageService.cs:línea 63
+2020-02-06 17:22:32,883 [55] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddOrUpdateBlogEntryFileCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddOrUpdateBlogEntryFileCommand
+2020-02-11 09:37:52,131 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 09:38:19,546 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 09:38:28,204 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 09:39:16,318 [40] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 09:39:35,231 [41] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-02-11 09:39:41,962 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 09:40:02,588 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 09:40:11,884 [41] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 09:40:37,494 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 09:40:43,902 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 10:59:15,216 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-11 11:08:55,754 [44] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-11 11:10:50,483 [44] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 11:22:17,627 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 14:15:03,665 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-11 14:15:47,408 [7] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntry, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-11 14:23:13,338 [27] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-11 14:24:37,586 [21] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 14:25:26,376 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommentCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommentCommand
+2020-02-11 14:25:26,776 [29] ERROR MVCBlog.Website.EmailMessageService [(null)] - Sending email failed
+System.Net.Mail.SmtpException: Error al enviar correo. ---> System.Net.WebException: No se puede resolver el nombre remoto: 'mail.mvcsocial.site'
+   en System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   en System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   en System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   en System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   en System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpClient.GetConnection()
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   en MVCBlog.Website.EmailMessageService.SendMessage(String sender, String recipient, String replyto, String subject, String body) en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Website\Code\EmailMessageService.cs:línea 63
+2020-02-11 18:31:32,115 [35] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-11 18:32:28,171 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 18:32:48,729 [31] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-02-11 18:33:30,759 [39] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 18:33:33,730 [35] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.DeleteBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command DeleteBlogEntryCommand
+2020-02-11 18:34:10,446 [44] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommand
+2020-02-11 18:34:30,347 [37] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddOrUpdateBlogEntryFileCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddOrUpdateBlogEntryFileCommand
+2020-02-11 18:34:44,354 [46] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateBlogEntryCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateBlogEntryCommand
+2020-02-11 18:35:24,339 [43] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddBlogEntryCommentCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddBlogEntryCommentCommand
+2020-02-11 18:35:24,501 [34] ERROR MVCBlog.Website.EmailMessageService [(null)] - Sending email failed
+System.Net.Mail.SmtpException: Error al enviar correo. ---> System.Net.WebException: No se puede resolver el nombre remoto: 'mail.mvcsocial.site'
+   en System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   en System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   en System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   en System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   en System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   en System.Net.Mail.SmtpClient.GetConnection()
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Net.Mail.SmtpClient.Send(MailMessage message)
+   en MVCBlog.Website.EmailMessageService.SendMessage(String sender, String recipient, String replyto, String subject, String body) en C:\Users\Sebastian\source\Workspaces\MVCBlogSociety\src\MVCBlog.Website\Code\EmailMessageService.cs:línea 63
+2020-02-11 18:35:27,851 [42] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.UpdateCommand`1[[MVCBlog.Core.Entities.BlogEntryFile, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command UpdateCommand`1
+2020-02-25 16:06:44,342 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:07:04,482 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:07:40,286 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:12:29,849 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:14:15,342 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:14:31,290 [14] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:17:40,817 [13] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:29:35,270 [8] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand
+2020-02-25 16:29:35,493 [24] INFO  MVCBlog.Core.Commands.CommandLoggingDecorator`1[[MVCBlog.Core.Commands.AddImageCommand, MVCBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] [(null)] - Executing command AddImageCommand

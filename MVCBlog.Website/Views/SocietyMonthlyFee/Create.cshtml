@@ -1,0 +1,36 @@
+﻿@model MVCBlog.Core.Entities.SocietyMonthlyFee
+
+<h2>@Common.Create&nbsp;@Common.SocietyMonthlyFee</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <hr />
+        @Html.Partial("_CreateOrEdit", Model)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=@Common.Save class="btn btn-default" id="b_submit" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink(@Common.BackToList, MVC.SocietyMonthlyFee.Index())
+</div>
+
+@section ScriptContent {
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/es.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyDateTime.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script>
+        //Calendar
+        $('#datetimepicker1').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+    </script>
+}

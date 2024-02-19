@@ -1,0 +1,172 @@
+﻿@model MVCBlog.Core.Entities.AspNetUser
+
+<h2>@Common.Details&nbsp;@Common.AspNetUser</h2>
+<div class="row">
+    <hr />
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NickName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NickName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Province.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Province.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Locality.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Locality.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Birthdate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+            <dd>
+                <img src="@Url.Content(Model.RelativePath + Model.Photo)" alt="sin foto" title="@Html.DisplayFor(model => model.Photo)" height="180" width="180" />
+            </dd>
+        </dl>
+    </div>
+
+    <div class="col-md-4">
+        @*<dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Modified)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Modified)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedUser)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedUser)
+                </dd>
+            </dl>*@
+        <div>
+
+            <dt>Servicios Inscriptos</dt>
+            <table class="table table-condensed">
+                @foreach (var item in Model.Services)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Service.Titulo)
+                        </td>
+                        <td>
+                            @Html.ActionLink(@Common.Edit, MVC.ServiceUsers.Edit(item.Id)) |
+                            @Html.ActionLink(@Common.Delete, MVC.ServiceUsers.Delete(item.Id))
+                        </td>
+                    </tr>
+                }   
+            </table>
+
+
+        </div>
+        <br />
+        <div>
+            <dt>Mese Pagos</dt>
+            <ul>
+                @foreach (var item in Model.MonthlyFees)
+                {
+                    <li>@Html.DisplayFor(modelItem => item.PeriodString)</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<p>
+    @Html.ActionLink(@Common.Edit, MVC.AspNetUsers.Edit(Model.Id)) |
+    @Html.ActionLink(@Common.BackToList, MVC.AspNetUsers.Index()) |
+    @Html.ActionLink(@Common.Export, MVC.AspNetUsers.ExportDetails(Model.Id))
+</p>

@@ -1,0 +1,105 @@
+﻿@model MVCBlog.Core.Entities.SocietyMonthlyFee
+
+<h2>@Common.Delete&nbsp;@Common.SocietyMonthlyFee</h2>
+<h4>@Common.DeleteConfirmation</h4>
+<div class="row">
+    @Html.ValidationMessage("CustomError", new { @class = "text-danger" })
+    <hr />
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AspNetUser.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Period)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Period)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsClosed)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsClosed)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Active)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Active)
+            </dd>
+        </dl>
+
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedUser)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Modified)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Modified)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedUser)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value=@Common.Delete class="btn btn-default" /> |
+        @Html.ActionLink(Common.BackToList, MVC.SocietyMonthlyFee.Index())
+    </div>
+}

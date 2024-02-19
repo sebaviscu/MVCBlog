@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVCBlog.Core.Entities.Category>
+
+<h2>@Common.List&nbsp;@Common.Category</h2>
+<p>
+    @Html.ActionLink(@Common.Create, MVC.Category.Create())
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YearFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameBrief)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameBrief)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink(@Common.Edit, MVC.Category.Edit(item.Id)) |
+            @Html.ActionLink(@Common.Details, MVC.Category.Details(item.Id)) |
+            @Html.ActionLink(@Common.Delete, MVC.Category.Delete(item.Id))
+        </td>
+    </tr>
+}
+
+</table>

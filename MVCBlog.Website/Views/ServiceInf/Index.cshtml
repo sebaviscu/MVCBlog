@@ -1,0 +1,42 @@
+﻿@model MVCBlog.Website.Models.OutputModels.Society.ServiceInfViewModels
+
+<h2>Informe de Servicios</h2>
+<p>
+    <span class="text-danger">@ViewBag.Message</span>
+</p>
+<div class="form-inline">
+    <div class="form-group">
+        @Html.LabelFor(model => model.InfList)
+        @Html.EnumDropDownListFor(model => model.InfList, "...", htmlAttributes: new { @class = "form-control" })
+    </div>
+    <button id="@Common.Export" type="button" value="@Common.Export" class="btn btn-info" data-loading-text="@Common.Exporting" onclick="exportInf();">
+        <span class="glyphicon glyphicon glyphicon-download"></span> Exportar
+    </button>
+
+</div>
+
+@section ScriptContent {
+    <script>
+        function exportInf() {
+            if ($("#InfList").val() == 0) return false;
+            $("#@Common.Export").button("loading");
+            var viewModel = { InfList: $("#InfList").val() };
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=UTF-8",
+                url: "/ServiceInf/Export/",
+                dataType: "json",
+                data: JSON.stringify(viewModel),
+                success: function (response) {
+                    if (response.success) {
+                        $("#@Common.Export").button("reset");
+                        window.location.replace("/ServiceInf/Download/" + "?file=" + response.result);
+                    }
+                },
+                error: function (ex) {
+                    alert("Error" + ex);
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,84 @@
+@model IEnumerable<MVCBlog.Core.Entities.Image>
+
+<form action="@Url.Action(MVC.Administration.ImageUpload())" method="post" enctype="multipart/form-data">
+    <h2>@Common.Upload</h2>
+    <div class="form-group">
+        <input type="file" class="multiple" name="files" multiple />
+    </div>
+    <button type="submit" class="btn btn-primary">@Common.Upload</button>
+    <h6>Resolucion recomendada 600 x 400 pixeles</h6>
+</form>
+
+<br />
+<h2>@Common.Images</h2>
+<table class="table">
+    @{int i = 0; }
+    @{
+        int count = 0; 
+
+        var tr = new HtmlString("<tr>");
+        var trEnd = new HtmlString("</tr>");
+
+    }
+    @foreach (var image in this.Model)
+    {
+        i++;
+
+        if (i == 4)
+        {
+            @tr;
+        }
+        <td class=" col-lg-4">
+            @image.Name
+
+            <button style=" margin:5px;" class="btn btn-danger btn-xs borrar" data-loading-text="Borrar" data-id="@image.Id" data-toggle="tooltip" data-placement="right" title="Eliminar Imagen">
+                <span class="glyphicon glyphicon glyphicon-remove btn-xs"></span>
+            </button>
+            <br />
+            <a class="lightbox" href="@Url.Content(image.RelativePath)" rel="screenshots">
+                <img src="@Url.Content(image.RelativePath)" alt="@image.Name" title="@image.Name" style="max-width: 300px; max-height: 300px" />
+            </a>
+        </td>
+        if (i  ==6)
+        {
+            @trEnd;
+        }
+    }
+        
+</table>
+
+
+@section ScriptContent {
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script>
+
+        $(".borrar").click(function () {
+
+
+            if (confirm("desea eliminar esta foto?")) {
+                var id = this.getAttribute("data-id");
+                $.ajax({
+                    type: "post",
+                    contenttype: "application/json; charset=utf-8",
+                    url: "Administration/ImageRemove",
+                    datatype: "json",
+                    data: { id },
+                    success: function (result) {
+                        location.reload();
+                    },
+                    error: function (ex) {
+                        alert("error" + ex);
+                    }
+                });
+
+            }
+        });
+
+
+
+    </script>
+}
+
+
+
+

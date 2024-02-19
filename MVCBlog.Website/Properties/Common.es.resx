@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    Version 2.0
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Ingreso fallido.</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Mantener sesión</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="PopularPosts" xml:space="preserve">
+    <value>Posts Populares</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Acerca</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="RssFeed" xml:space="preserve">
+    <value>Suscribir a RSS Feed</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ocurrió un error. El webmaster fue notificado.</value>
+  </data>
+  <data name="Error404" xml:space="preserve">
+    <value>La página solicitada no pudo ser encontrada.</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>por</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Ver más...</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DeleteCommentConfirmation" xml:space="preserve">
+    <value>¿Está seguro que quieres eliminar este comentario?</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>¿Está seguro que quieres eliminar este registro?</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Descargas</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="NewComment" xml:space="preserve">
+    <value>Nuevo comentario</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="NoComments" xml:space="preserve">
+    <value>No hay comentarios disponibles.</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No hay entradas disponibles.</value>
+  </data>
+  <data name="Pingbacks" xml:space="preserve">
+    <value>Pingbacks</value>
+  </data>
+  <data name="PreviousPage" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="Printing" xml:space="preserve">
+    <value>Imprimiendo...</value>
+  </data>
+  <data name="RelatedPosts" xml:space="preserve">
+    <value>Posts realcionados</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="ToComments" xml:space="preserve">
+    <value>Mostrar comentarios</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Insertar imagen</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="ErrorPingback" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Archivo</value>
+  </data>
+  <data name="Filename" xml:space="preserve">
+    <value>Nombre de Archivo</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="HTMLCode" xml:space="preserve">
+    <value>HTML-Code</value>
+  </data>
+  <data name="HTMLCodeLightbox" xml:space="preserve">
+    <value>HTML-Code (Lightbox)</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Imagenes</value>
+  </data>
+  <data name="ImagesManagement" xml:space="preserve">
+    <value>Adminitración de Imagenes</value>
+  </data>
+  <data name="LoadEditor" xml:space="preserve">
+    <value>Editor de Carga/Descarga</value>
+  </data>
+  <data name="MetaData" xml:space="preserve">
+    <value>Información Estadística</value>
+  </data>
+  <data name="NewBlogEntry" xml:space="preserve">
+    <value>Nuevo post</value>
+  </data>
+  <data name="PerformPingbacks" xml:space="preserve">
+    <value>Realizar pingbacks</value>
+  </data>
+  <data name="PingbackOnlyWhenVisible" xml:space="preserve">
+    <value>Pingback sólo es posible, si la entrada es visible públicamente</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="RemainingChars" xml:space="preserve">
+    <value>Número restante de caracteres</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SelectImage" xml:space="preserve">
+    <value>Seleccionar imagen</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Grabo correctamente</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Visits" xml:space="preserve">
+    <value>Visistas</value>
+  </data>
+  <data name="RSSReaders" xml:space="preserve">
+    <value>RSS Readers</value>
+  </data>
+  <data name="SingleUsers" xml:space="preserve">
+    <value>Usuarios individuales</value>
+  </data>
+  <data name="HeroText" xml:space="preserve">
+    <value>Debe inicia sesión para escribir y editar entradas en el blog.</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Contenido</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Estadísticas</value>
+  </data>
+  <data name="ShowPost" xml:space="preserve">
+    <value>Mostrar post</value>
+  </data>
+  <data name="ConcurrencyException" xml:space="preserve">
+    <value>El registro que intentó editar fue modificado por otro usuario después de obtener el valor original.</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Vacio</value>
+  </data>
+  <data name="CurrentValue" xml:space="preserve">
+    <value>Valor actual</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Insertar</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Volver a la lista</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="Finding" xml:space="preserve">
+    <value>Buscando...</value>
+  </data>
+  <data name="AspNetUser" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Listado</value>
+  </data>
+  <data name="SocietyMonthlyFee" xml:space="preserve">
+    <value>Cuotas Societarias</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Pagar</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="Exporting" xml:space="preserve">
+    <value>Exportando...</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Actualizando...</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Ultimo</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Gestionar</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informe</value>
+  </data>
+</root>

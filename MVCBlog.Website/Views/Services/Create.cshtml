@@ -1,0 +1,118 @@
+﻿@model MVCBlog.Core.Entities.Service
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Nuevo Servicio</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.CoachId, "CoachId", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Profesor</label>
+            <div class="col-md-10">
+                @Html.DropDownList("CoachId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CoachId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.ServiceTypeId, "ServiceTypeId", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Tipo de Servicio</label>
+            <div class="col-md-10">
+                @Html.DropDownList("ServiceTypeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ServiceTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.SchedulerDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SchedulerDay, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SchedulerDay, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                        @Html.LabelFor(model => model.SchedulerDay)
+                        @Html.EnumDropDownListFor(model => model.SchedulerDay, "", htmlAttributes: new { @class = "form-control" })
+                    </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SchedulerDay, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Scheduler, "", htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SchedulerTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                        @Html.EditorFor(model => model.SchedulerTime, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyDate(event);" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" value="Crear" class="btn btn-success">
+                    <span class="glyphicon glyphicon-ok"></span> Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Volver a la Lista", MVC.Services.Index())
+</div>
+
+@section ScriptContent {
+    <link rel="stylesheet" href="/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+    <!-- Updated stylesheet url -->
+    <link rel="stylesheet" href="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- Updated JavaScript url -->
+    <script src="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <script type="text/javascript">
+
+            //$(function () {
+            //    $('#timepicker1').timepicker({
+            //        minTime: '10',
+            //        maxTime: '8:00pm'
+            //    });
+            //});
+
+    </script>
+
+}

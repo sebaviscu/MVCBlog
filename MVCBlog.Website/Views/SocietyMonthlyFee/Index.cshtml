@@ -1,0 +1,162 @@
+﻿@model MVCBlog.Website.Models.OutputModels.Society.SMFViewModels
+@using res = MVCBlog.Core.Resources;
+
+<h2>@Common.List&nbsp;@Common.SocietyMonthlyFee</h2>
+<p>
+    &nbsp;
+</p>
+@using (Ajax.BeginForm(MVC.SocietyMonthlyFee.Find(), new AjaxOptions
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "list",
+    OnBegin = "onBegin",
+    OnComplete = "onComplete"
+}, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor((model => model.AspNetUserId))
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName)
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyInteger(event);" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateFrom)
+            <div class="input-group date" id="datetimepicker1">
+                @{ Html.EnableClientValidation(false); }
+                @Html.EditorFor(model => model.DateFrom, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyDate(event);" } })
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+            @Html.ValidationMessageFor(model => model.DateFrom, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateTo)
+            <div class="input-group date" id="datetimepicker2">
+                @{ Html.EnableClientValidation(false); }
+                @Html.EditorFor(model => model.DateTo, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyDate(event);" } })
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+            @Html.ValidationMessageFor(model => model.DateTo, "", new { @class = "text-danger" })
+        </div>
+        <button id="@Common.Find" type="submit" value="@Common.Find" class="btn btn-success" data-loading-text="@Common.Finding">
+            <span class="glyphicon glyphicon-search"></span> Buscar
+        </button>
+
+
+        <button href="#barcode" class="btn btn-info btn-sm" data-toggle="collapse" style="margin-left:10px;">
+            <span class="glyphicon glyphicon-barcode"></span> Cod.Barra
+        </button>
+        @*<a href="#barcode" data-toggle="collapse">Cod.Barra</a>*@
+    </div>
+}
+<br />
+<div class="row form-inline">
+    <div id="barcode" class="collapse">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Barcode)
+                @Html.EditorFor(model => model.Barcode, new { htmlAttributes = new { @class = "form-control", @onkeypress = "return OnlyInteger(event);" } })
+                @Html.ValidationMessageFor(model => model.Barcode, "", new { @class = "text-danger" })
+            </div>
+            <input id="@Common.Pay" type="submit" value="@Common.Pay" class="btn btn-warning" onclick="payFee();" />
+        </div>
+        <div class="col-md-6"><p id="badge_msg" class="bg-success"></p></div>
+    </div>
+</div>
+<br />
+
+<div id="list"></div>
+@if (Request.IsAuthenticated && User.IsInRole("ADMIN"))
+{
+    <button id="btnFeesWithClose" class="btn btn-primary btn-sm" data-loading-text="@Common.Updating" onclick="updateFeesWithClose();">
+        <span class="glyphicon glyphicon glyphicon-retweet"></span> @Common.Close @Common.SocietyMonthlyFee
+    </button>
+}
+
+@section ScriptContent{
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/es.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyDateTime.js"></script>
+    <script type="text/javascript" src="~/Scripts/onlyNumeric.js"></script>
+    <script type="text/javascript">
+        //Calendar
+        $('#datetimepicker1').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+        $('#datetimepicker2').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+        function onBegin() {
+            $("#@Common.Find").button("loading");
+        }
+
+        function onComplete() {
+            $("#@Common.Find").button("reset");
+        }
+        // Get the input field
+//    document.getElementById("Barcode").addEventListener("keyup", function (event) {
+//    if (event.keyCode === 48) {
+//      payFee();
+//  }
+//});
+        function payFee() {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("PayWithBarcode")',
+                dataType: "json",
+                data: { barcode: $("#Barcode").val() },
+                error: function (response) {
+                    alert(response.responseText);
+                },
+                success: function (response) {
+                    debugger;
+                    var bad = $("#badge_msg")
+                    var err = response.substring(0, 5);
+                    if (err == "")
+                        bad.val("");
+                    else if (err == "Error")
+                        bad.removeClass("bg-success").addClass("bg-danger");
+                    else
+                        bad.removeClass("bg-danger").addClass("bg-success");
+                    bad.text(response);
+                       setTimeout(function() {
+                        bad.fadeOut(500);},3000);
+                }
+            });
+            $("#Barcode").val("");
+        }
+
+        function updateFeesWithClose() {
+            if (confirm("@res.Validation.AreYouSureYouWant @Common.Close @Common.SocietyMonthlyFee?")) {
+                $("#btnFeesWithClose").button("loading");
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=UTF-8",
+                    url: "@Url.Action(MVC.SocietyMonthlyFee.UpdateFeesWithClose())",
+                    dataType: "json",
+                    data: {},
+                    success: function (result) {
+                        if (result.success) {
+                            $("#btnFeesWithClose").button("reset");
+                            alert(result.msg);
+                        }
+                    },
+                    error: function (ex) {
+                        alert("Error" + ex);
+                    }
+                });
+            }
+        }
+    </script>
+}
+
+
+

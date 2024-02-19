@@ -1,0 +1,97 @@
+﻿@model MVCBlog.Core.Entities.SocietyMonthlyFee
+
+<h2>@Common.Details&nbsp;@Common.SocietyMonthlyFee</h2>
+<div class="row">
+    <hr />
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AspNetUser.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Period)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Period)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsClosed)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsClosed)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Active)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Active)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedUser)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Modified)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Modified)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUser)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedUser)
+            </dd>
+        </dl>
+    </div>
+
+</div>
+<p>
+    @Html.ActionLink(@Common.Edit, MVC.SocietyMonthlyFee.Edit(Model.Id)) |
+    @Html.ActionLink(@Common.BackToList, MVC.SocietyMonthlyFee.Index())
+</p>

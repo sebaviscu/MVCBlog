@@ -1,0 +1,154 @@
+﻿@model MVCBlog.Core.Entities.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>DETALLES</h2>
+
+<div class="float-md-right">
+    <h4>Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Coach.FullName)
+        </dt>
+
+        <dd>
+            @if (Model.Coach != null)
+            {
+                @Html.DisplayFor(model => model.Coach.FullName)
+            }
+            else
+            { <span>- - - - -</span>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            $ @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchedulerDay)
+        </dt>
+
+        <dd>
+            @if (Model.SchedulerDay != null)
+            {
+                @Html.DisplayFor(model => model.SchedulerDay)
+            }
+            else
+            { <span>- - - - -</span>}
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchedulerTime)
+        </dt>
+
+        <dd>
+            @if (Model.SchedulerTime != null)
+            {
+                @Html.DisplayFor(model => model.SchedulerTime)
+            }
+            else
+            { <span>- - - - -</span>}
+        </dd>
+
+        <br />
+        <br />
+</div>
+
+
+<table style="float:left;">
+    <tr>
+        <th style="width:200px">
+            <h3>Socios Inscriptos</h3>
+        </th>
+        <th>
+            <button id-service="@Model.Id" id="btnDownload"  class="glyphicon glyphicon glyphicon-download" data-toggle="tooltip" data-placement="right" title="Descargar Socios Inscriptos" onclick="exportInf();"></button>
+        </th>
+    </tr>
+
+</table>
+
+<table class="table table-condensed">
+
+    <tr>
+        <th>
+            Nombre y Apellido
+        </th>
+        <th>
+            Correo Electronico
+        </th>
+        <th>
+            Telefono
+        </th>
+    </tr>
+    @foreach (var item in Model.ServiceUsers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+        </tr>
+
+    }
+</table>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Volver a la Lista", "Index")
+</p>
+
+@section ScriptContent {
+    <script>
+    function exportInf() {
+        debugger;
+       
+        var idServ = document.getElementById("btnDownload").getAttribute("id-service");
+
+        var data = { id: idServ };
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=UTF-8",
+                url: "/SocInf/ExportService/",
+                dataType: "json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response.success) {
+                        $("#@Common.Export").button("reset");
+                        window.location.replace("/ServiceInf/Download/" + "?file=" + response.result);
+                    }
+                },
+                error: function (ex) {
+                    alert("Error" + ex);
+                }
+            });
+        }
+    </script>
+}

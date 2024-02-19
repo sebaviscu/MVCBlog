@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNet.Identity
+
+    <div>
+        <br />
+        @if (Request.IsAuthenticated)
+        {
+            @*@Html.ActionLink(@Common.Management, MVC.Administration.Index())
+            <text>|</text>
+            @Html.ActionLink(@Common.Logout, MVC.Login.Logout())*@
+
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = @Common.Manage })
+                <text>|&nbsp;</text><a href="javascript:document.getElementById('logoutForm').submit()">@Common.Logout</a>
+            }
+        }
+        else
+        {
+            @Html.ActionLink(@Common.Login, MVC.Account.Login())
+        }
+
+    </div>

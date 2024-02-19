@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="$resources:SiteMapLocalizations,Blog_Index" controller="Blog" action="Index" preservedRouteParameters="tag,page">
+
+    
+    <mvcSiteMapNode title="$resources:SiteMapLocalizations,About_Index" controller="About" action="Index"/>
+    <!--<mvcSiteMapNode title="$resources:SiteMapLocalizations,Imprint_Index" controller="Imprint" action="Index"/>-->
+    
+    <mvcSiteMapNode title="$resources:SiteMapLocalizations,Administration_Index" controller="Administration" action="Index" roles="ADMIN,OFFICE,COACH">
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,Blog_Entry" action="EditBlogEntry"/>
+      <!--<mvcSiteMapNode title="$resources:SiteMapLocalizations,Administration_Pingback" action="PerformPingbacks"/>-->
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,Administration_Statistics" action="Statistics"/>
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,Administration_Images" action="Images"/>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Usuarios" clickable="false" roles="ADMIN,OFFICE">
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,AspNetUsers_Index" controller="AspNetUsers" action="Index" slug="about-us" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,Category_Index" controller="Category" action="Index" slug="about-us" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,SocietyMonthlyFee_Index" controller="SocietyMonthlyFee" action="Index" slug="about-us" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,SocMonFeePrint_Index" controller="SocMonFeePrint" action="Index" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,SocInf_Index" controller="SocInf" action="Index" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Servicios" clickable="false" roles="ADMIN,OFFICE">
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,Service_Index" controller="Services" action="Index" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,ServiceUsers_Index" controller="ServiceUsers" action="Index" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,ServiceType_Index" controller="ServiceTypes" action="Index" />
+      <mvcSiteMapNode title="$resources:SiteMapLocalizations,ServiceInf_Index" controller="ServiceInf" action="Index" />
+    </mvcSiteMapNode>
+    
+  </mvcSiteMapNode>
+</mvcSiteMap>

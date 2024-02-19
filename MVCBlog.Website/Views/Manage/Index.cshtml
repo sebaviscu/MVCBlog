@@ -1,0 +1,49 @@
+﻿@model MVCBlog.Website.Models.IndexViewModel
+
+<div class="col-md-10 form-group row">
+    <h3>@Model.User.FullName</h3>
+</div>
+<div class="col-md-2">
+    <form action="https://drive.google.com/file/d/1tw8TovvC6hxKSy2RpixLlOBi_wjmWvLK/view?usp=sharing" method="get" target="_blank">
+        <button type="submit" class="btn btn-info btn-sm" data-loading-text="@Common.Exporting" onclick="exportGrid();" data-toggle="tooltip" data-placement="right" title="Descargar Manual de Usuario .xlsx">
+            <span class="glyphicon glyphicon-list-alt"></span> Manual de Usuario
+        </button>
+    </form>
+</div>
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+<div class="col-md-4">
+    <dt>@Common.Password:</dt>
+    <dd>
+        [
+        @if (Model.HasPassword)
+        {
+            @Html.ActionLink(@Common.ChangePassword, MVC.Manage.ChangePassword())
+        }
+        else
+        {
+            @Html.ActionLink(@Common.Create, MVC.Manage.SetPassword())
+        }
+        ]
+    </dd>
+</div>
+<div class="col-md-4">
+    <dt>Servicios Inscriptos</dt>
+    <ul>
+        @foreach (var item in Model.Services)
+        {
+            <li>@Html.DisplayFor(modelItem => item.Titulo)</li>
+        }
+    </ul>
+</div>
+
+<div class="col-md-4">
+    <dt>Periodos Pagados</dt>
+    <ul>
+        @foreach (var item in Model.MonthlyFees.OrderBy(_=>_.MonthPeriod))
+        {
+            <li>@Html.DisplayFor(modelItem => item.PeriodString)</li>
+        }
+    </ul>
+</div>
+
